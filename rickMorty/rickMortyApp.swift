@@ -8,13 +8,17 @@
 import SwiftUI
 
 @main
-struct rickMortyApp: App {
+
+
+struct RickAndMortyApp: App {
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppRouter()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                
         }
     }
 }
