@@ -17,10 +17,4 @@ class CharacterRouter: CharacterRouterProtocol {
         let presenter = CharacterPresenter(interactor: interactor, router: self)
         return AnyView(CharacterListView(presenter: presenter))
     }
-    
-    func createFavoriteListView() -> AnyView {
-        let interactor = CharacterInteractor()
-        let presenter = CharacterPresenter(interactor: interactor, router: self)
-        return AnyView(FavoriteCharactersView(presenter: presenter))
-    }
 }

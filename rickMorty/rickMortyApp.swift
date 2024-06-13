@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 
-
 struct RickAndMortyApp: App {
     
     let persistenceController = PersistenceController.shared
