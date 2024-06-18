@@ -55,7 +55,7 @@ struct CharacterDetailView: View {
                             .foregroundColor(.white)
                         Text("Status: \(presenter.character.gender)")
                             .foregroundColor(.white)
-                        Text("Created: \(formattedDate(from: presenter.character.created))")
+                        Text("Created: \(presenter.formattedDate(from: presenter.character.created))")
                             .foregroundColor(.white)
                     }
                     .padding()
@@ -67,119 +67,5 @@ struct CharacterDetailView: View {
             }
             .padding()
         }
-    }
-    
-//    var body: some View {
-//        ZStack(alignment: .top) {
-//            Image("bgImage")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .edgesIgnoringSafeArea(.all)
-//
-//
-//            VStack {
-//                VStack {
-//                    AsyncImage(url: URL(string: presenter.character.image)) { image in
-//                        image.resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 100, height: 100)
-//                    } placeholder: {
-//                        ProgressView()
-//                            .frame(width: 100, height: 100)
-//                    }
-//                }
-//                .padding(.bottom, -30)
-//            }
-//
-//            VStack {
-//                VStack {
-//                    HStack {
-//                        Spacer()
-//                        Button(action: presenter.toggleFavorite) {
-//                            Image(presenter.isFavorite ? "favorited" : "favorite")
-//                                .foregroundColor(presenter.isFavorite ? .yellow : .gray)
-//                        }
-//                        .padding(.trailing, 20)
-//                    }
-//
-//                    VStack {
-//                        Text(presenter.character.name)
-//                            .font(.largeTitle)
-//                            .foregroundColor(.white)
-//                        Text(presenter.character.species)
-//                            .font(.largeTitle)
-//                            .foregroundColor(.white)
-//                        // todo display date formatted
-//                        Text("Created: \(formattedDate(from: presenter.character.created))")
-//                            .font(.title)
-//                            .foregroundColor(.white)
-//                    }
-//                    .background(Color.blue)
-//                }
-//                .background(Color.purple)
-//            }
-//            .background(Color.red)
-//            .padding()
-//            .padding(.top, 50)
-//        }
-//    }
-
-    
-//    var body: some View {
-//        ZStack(alignment: .top) {
-//            Image("bgImage")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .edgesIgnoringSafeArea(.all)
-//            VStack {
-//                VStack() {
-//                    AsyncImage(url: URL(string: presenter.character.image)) { image in
-//                        image.resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 100, height: 100)
-//                    } placeholder: {
-//                        ProgressView()
-//                            .frame(width: 100, height: 100)
-//                    }
-//                }.padding(.bottom, -30)
-//
-//                VStack {
-//                    HStack {
-//                        Spacer()
-//                        Button(action: presenter.toggleFavorite) {
-//                            Image(presenter.isFavorite ? "favorited" : "favorite")
-//                                .foregroundColor(presenter.isFavorite ? .yellow : .gray)
-//                        }
-//                        .padding(.trailing, 20)
-//                    }
-//                    VStack {
-//
-//                        Text(presenter.character.name)
-//                            .font(.largeTitle)
-//                            .foregroundColor(.white)
-//                        Text(presenter.character.species)
-//                            .font(.largeTitle)
-//                            .foregroundColor(.white)
-//                        // todo display date formatted
-//                        Text("Created: \(formattedDate(from: presenter.character.created))")
-//                            .font(.title)
-//                            .foregroundColor(.white)
-//
-//                    }
-//                    .background(Color.blue)
-//                }
-//                .background(Color.purple)
-//            }
-//            .background(Color.red)
-//            .padding()
-//            .padding(.top, 50)
-//        }
-//    }
-    
-    func formattedDate(from dateString: String) -> String {
-        let date = dateString.dateFromString(dateString)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        return dateFormatter.string(from: date)
     }
 }

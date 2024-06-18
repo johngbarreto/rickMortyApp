@@ -36,6 +36,13 @@ class CharacterDetailPresenter: CharacterDetailPresenterProtocol {
             }
             .store(in: &cancellables)
     }
+    
+    func formattedDate(from dateString: String) -> String {
+        let date = dateString.dateFromString(dateString)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: date)
+    }
 
     func toggleFavorite() {
         if isFavorite {
