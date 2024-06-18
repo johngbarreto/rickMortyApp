@@ -43,6 +43,7 @@ class CharacterDetailPresenter: CharacterDetailPresenterProtocol {
         } else {
             interactor.favoriteCharacter(character)
         }
+        checkFavoriteStatus()
         isFavorite.toggle()
     }
 }

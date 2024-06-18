@@ -52,8 +52,6 @@ struct CharacterListView: View {
                 }
             }
         }
-        .onAppear {
-            presenter.loadCharacters()
-        }
+
     }
 }

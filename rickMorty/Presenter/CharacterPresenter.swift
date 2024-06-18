@@ -25,7 +25,6 @@ class CharacterPresenter: CharacterPresenterProtocol {
     @Published var characters: [Character] = []
     @Published var favoritedCharacters: [CharacterEntity] = []
     @Published var selectedCharacter: Character? = nil
-    @Published var isShowingFavoriteCharacters: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -45,7 +44,9 @@ class CharacterPresenter: CharacterPresenterProtocol {
                     print("Loaded character: \(character.name), Race: \(character.species)")
                 }
             }
-        .store(in: &cancellables)    }
+        .store(in: &cancellables)
+        
+    }
     
     func toggleFavorite(character: Character) {
         if checkFavorite(character: character) {
@@ -65,6 +66,7 @@ class CharacterPresenter: CharacterPresenterProtocol {
     }
     
     func checkFavorite(character: Character) -> Bool {
+        loadFavoritedCharacters()
         return favoritedCharacters.contains { $0.id == Int32(character.id) }
     }
     
@@ -82,9 +84,6 @@ class CharacterPresenter: CharacterPresenterProtocol {
         selectedCharacter = character
     }
     
-    func showFavoriteCharactersView() {
-        print("test")
-        isShowingFavoriteCharacters = true
-    }
+
 }
 
