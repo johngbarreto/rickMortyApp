@@ -21,17 +21,22 @@ struct CustomNavBarView: View {
         }
     
     var body: some View {
-        HStack {
-            if showBackButton {
-                backButton
+        
+        ZStack {
+            HStack {
+                if showBackButton {
+                    backButton
+                }
+           
+                Spacer()
+                if showStarButton {
+                    starButton
+                }
             }
-            Spacer()
+            .padding(.horizontal)
             navLogo
-            Spacer()
-            if showStarButton {
-                starButton
-            }
         }
+        .frame(maxWidth: .infinity, minHeight: 65)
         .padding(.top, 50)
         .background(Color.customBlackBg.ignoresSafeArea(edges: .top))
     }
@@ -59,6 +64,7 @@ struct CustomNavBarView: View {
 
     private var navLogo: some View {
         Image("navLogo")
+            .frame(height: 50)
     }
 }
 

@@ -48,7 +48,6 @@ struct CharacterDetailView: View {
                         Text(presenter.character.name)
                             .font(.largeTitle)
                             .foregroundColor(.green)
-                        
                         Text("Gender: \(presenter.character.gender)")
                             .foregroundColor(.white)
                         Text("Species: \(presenter.character.species)")
